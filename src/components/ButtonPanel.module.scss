@@ -1,0 +1,9 @@
+$animate-sec: 1.5s;
+
+.BtnLoading {
+  -webkit-animation: rotating $animate-sec linear infinite;
+  -moz-animation: rotating $animate-sec linear infinite;
+  -ms-animation: rotating $animate-sec linear infinite;
+  -o-animation: rotating $animate-sec linear infinite;
+  animation: rotating $animate-sec linear infinite;
+}

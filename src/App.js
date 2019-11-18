@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { AudioPlayer } from "./components";
+import { stringToSeconds } from "./mixins/TimeFormatterMixin";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AudioPlayer
+        audioItems={[
+          {
+            src:
+              "https://thebkp-podcasts.s3.amazonaws.com/joyce-dave-bill-allinfra-v1.mp3",
+            name: "main source"
+          }
+        ]}
+      />
+      <AudioPlayer
+        audioItems={[
+          {
+            src:
+              "https://thebkp-podcasts.s3.amazonaws.com/joyce-dave-bill-allinfra-v1.mp3",
+            name: "What is your background and path to a blockchain career?",
+            start: stringToSeconds("1:18"),
+            end: stringToSeconds("2:38")
+          },
+          {
+            src:
+              "https://thebkp-podcasts.s3.amazonaws.com/joyce-dave-bill-allinfra-v1.mp3",
+            name:
+              "Different types of traditional financing that could be improved by blockchain.",
+            start: stringToSeconds("2:45"),
+            end: stringToSeconds("3:33")
+          }
+        ]}
+      />
     </div>
   );
 }
