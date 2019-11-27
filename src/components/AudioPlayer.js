@@ -56,7 +56,6 @@ class AudioPlayer extends Component {
     const audio = this.state.audioItems[this.state.currentAudioItemIndex];
     const audioItemCount = this.audioItemCount();
     var percent = 0;
-    console.log(this.state.seek, this.state.duration);
     if (this.state.seek && this.state.duration) {
       percent = audio.sprite
         ? (this.state.seek - audio.sprite.frame[0] / 1000) / this.state.duration
@@ -176,7 +175,6 @@ class AudioPlayer extends Component {
     this.clearSoundObject();
     this.setState({ isLoading: true });
     const audio = this.state.audioItems[this.state.currentAudioItemIndex];
-    console.log(audio);
     var options = {
       src: audio.src,
       volume: this.state.volume,
